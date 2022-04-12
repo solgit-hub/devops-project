@@ -32,15 +32,15 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: line
         run: |
-line=`cat ./line.txt |wc -l`
-function solution(line) {
-    var answer = '';
-    
-    if(line %2==0){ //짝수인 경우
-        answer='짝';
-    } else //홀수인 경우
-        answer='홀';
-    
-    return answer;
-}
+              Line=`cat ./line.txt |wc -l`
+              sum=$(($Line+1))
+              echo "Count Line="$sum
+              result=$(($sum%2))
+              echo "result="$result
+              if [ ${result} -eq 0 ]
+              then
+                  echo "OK"
+              else
+                  exit
+              fi
 
