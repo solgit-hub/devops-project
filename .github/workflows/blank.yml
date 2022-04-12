@@ -32,4 +32,4 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: line
         run: |
-            if [ $(expr `cat ./line.txt |wc -l` % 2) == 0 ]; then echo '짝'; else echo '홀'; fi
+            if [ $(expr `cat ./test.txt |wc -l` % 2) == 0 ]; then echo '짝'; else echo '홀'; fi
