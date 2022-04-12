@@ -33,8 +33,14 @@ jobs:
       - name: line
         run: |
               Line=`cat ./line.txt |wc -l`
-              if Line%2 == 0:
-              print("짝수입니다.")
-              else:
-              print("홀수입니다.")
+              sum=$(($Line+1))
+              echo "Count Line="$sum
+              result=$(($sum%2))
+              echo "result="$result
+              if [ ${result} -eq 0 ]
+              then
+                  echo "OK"
+              else
+                  exit
+              fi
 
