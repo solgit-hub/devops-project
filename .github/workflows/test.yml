@@ -33,9 +33,14 @@ jobs:
       - name: line
         run: |
 line=`cat ./line.txt |wc -l`
-def test(line) :
-  if line % 2 == 1:
-  return '홀'
-  else:
-  return '짝'
+function solution(line) {
+    var answer = '';
+    
+    if(line %2==0){ //짝수인 경우
+        answer='짝';
+    } else //홀수인 경우
+        answer='홀';
+    
+    return answer;
+}
 
